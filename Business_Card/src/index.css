@@ -1,0 +1,204 @@
+/* Page background + centering */
+:root {
+  --green-900: #0f2a22; /* deep forest */
+  --green-800: #14352b;
+  --green-700: #194235;
+  --green-600: #1f5242;
+  --green-400: #deb300; /* accent (updated) */
+  --green-300: #f2d74e; /* light accent (derived from #DEB300 lighter tone) */
+  --ink-100: #e7e7e7; /* light text */
+  --ink-300: #dadada; /* muted text */
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  --accent: #deb300; /* gold accent */
+  --accent-200: #f2d74e; /* lighter gold for hovers/soft UI */
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #242424;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: var(--ink-100);
+  display: grid;
+  place-items: center;
+}
+.business-card {
+  display: flex;
+  gap: 80px;
+}
+
+/* Front Card */
+/* ************************************************* */
+/* The card (<main>) */
+main {
+  width: min(92vw, 360px);
+  background: linear-gradient(180deg, var(--green-800), var(--green-900));
+  border: 1px solid rgba(122, 198, 163, 0.12);
+  border-radius: 14px;
+  overflow: hidden; /* rounds the image corners too */
+  box-shadow: var(--shadow);
+}
+
+/* Image section */
+.card-image {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+/* Title */
+.main-tilte h3 {
+  margin: 24px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--ink-100);
+}
+
+/* Buttons row */
+.button-container {
+  display: flex;
+  gap: 10px;
+  padding: 0 16px 14px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: var(--green-600);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+button .fa-solid,
+button .fa-brands {
+  font-size: 16px;
+}
+
+/* Variants */
+.email-btn {
+  background: #fff;
+  color: #0f2a22;
+  border-color: rgba(31, 82, 66, 0.25);
+}
+.email-btn:hover {
+  background: #f3fff9;
+  box-shadow: 0 0 0 3px rgba(122, 198, 163, 0.25) inset;
+}
+.linkedin-btn {
+  background: var(--green-400);
+  color: #0b2019;
+}
+.linkedin-btn:hover {
+  background: var(--green-300);
+}
+
+/* Content */
+main p {
+  margin: 12px 16px 18px;
+  line-height: 1.7;
+  color: var(--ink-100);
+  opacity: 0.95;
+}
+
+/* Small screens polish */
+@media (max-width: 380px) {
+  .card-image {
+    height: 210px;
+  }
+}
+main h3 {
+  margin: 16px 18px 8px; /* space below title */
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: var(--ink-100);
+  text-align: center;
+}
+
+/* Back Busines Card */
+/* ************************************** */
+
+.card-logo {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+/* Subtitle */
+.back-subtitle {
+  color: var(--ink-200);
+  font-size: 1.4rem;
+
+  /* margin: 20px 0 40px 0; */
+  border: white solid 1px;
+}
+
+/* Services in one clean row */
+.back-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.back-services li {
+  font-size: 0.9rem;
+  color: var(--accent); /* gold accent (#DEB300) */
+  font-weight: 600;
+}
+
+/* ************************* */
+/* Back layout */
+
+.back-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px;
+  text-align: center;
+}
+
+/* Services as links */
+.back-services {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.back-services li a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-services li a:hover {
+  color: #f2d74e;
+  text-decoration: underline;
+}
+
+/* Contact details */
+.back-contact {
+  font-size: 0.9rem;
+  color: var(--ink-200);
+  margin-top: 12px;
+  line-height: 1.5;
+}
